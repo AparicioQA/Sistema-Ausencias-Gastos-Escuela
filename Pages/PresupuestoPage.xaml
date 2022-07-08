@@ -1,0 +1,115 @@
+﻿<Page
+    x:Class="CentroEducativoPalmarSur.Pages.PresupuestoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:CentroEducativoPalmarSur.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="PresupuestoPage"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Grid>
+        <StackPanel Margin="0,5,0,0">
+            <Grid Width="400">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+
+                </Grid.RowDefinitions>
+
+                <StackPanel
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="1">
+                    <Label Style="{StaticResource LabelPropertyName}">
+                        Año Presupuesto
+                    </Label>
+                    <TextBox Name="TxtYear" Width="140" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <Label Style="{StaticResource LabelPropertyName}">
+                        Monto
+                    </Label>
+                    <TextBox Name="TxtMonto" Width="140" />
+                </StackPanel>
+
+                <Button
+                    x:Name="BtnAgregar"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Width="200"
+                    Height="30"
+                    VerticalAlignment="Center"
+                    Click="BtnAgregar_Click"
+                    Style="{StaticResource OptionsButtons}">
+                    Agregar
+                </Button>
+
+            </Grid>
+
+            <DataGrid
+                Name="DataGridPresupuesto"
+                MinHeight="360"
+                Margin="10"
+                AutoGenerateColumns="False"
+                CanUserAddRows="False"
+                ColumnWidth="160"
+                FontSize="14"
+                SelectionMode="Single">
+
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        Binding="{Binding IdPresupuesto}"
+                        Header="ID"
+                        Visibility="Hidden" />
+                    <DataGridTextColumn
+                        Binding="{Binding Year}"
+                        Header="Año de Presupuesto"
+                        IsReadOnly="True" />
+
+                    <DataGridTextColumn Binding="{Binding Monto}" Header="Monto Original" />
+                    <DataGridTextColumn
+                        Binding="{Binding TotalGastos}"
+                        Header="Gastado"
+                        IsReadOnly="True" />
+                    <DataGridTextColumn
+                        Binding="{Binding Restante}"
+                        Header="Restante"
+                        IsReadOnly="True" />
+                    <DataGridTemplateColumn x:Name="BtnActualizar" Header="Actualizar">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button
+                                    x:Name="BtnActualizar"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    Click="BtnActualizar_Click">
+                                    <Image
+                                        Width="20"
+                                        Height="20"
+                                        Source="/Images/updated.png"
+                                        Visibility="Visible" />
+
+                                </Button>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+
+
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

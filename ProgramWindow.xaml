@@ -1,0 +1,78 @@
+﻿<Window
+    x:Class="CentroEducativoPalmarSur.ProgramWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:CentroEducativoPalmarSur"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="SACGP"
+    Icon="/school.png"
+    ResizeMode="CanResize"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <DockPanel Height="Auto">
+
+        <Grid Width="200" DockPanel.Dock="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="20*" />
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Label
+                Grid.Row="0"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Background="White"
+                Content="SACGP" />
+            <ListBox
+                Name="NameTitle"
+                Grid.Row="1"
+                Background="#E0740F"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                SelectionChanged="NameTitle_SelectionChanged">
+                <ListBoxItem Style="{StaticResource ProgramItems}">
+                    Colaboradores
+                </ListBoxItem>
+                <ListBoxItem Style="{StaticResource ProgramItems}">
+                    Ausencias
+                </ListBoxItem>
+
+                <ListBoxItem Style="{StaticResource ProgramItems}">
+                    Gastos
+                </ListBoxItem>
+                <ListBoxItem Style="{StaticResource ProgramItems}">
+                    Presupuestos
+                </ListBoxItem>
+                <ListBoxItem Style="{StaticResource ProgramItems}">
+                    Manual de Usuario
+                </ListBoxItem>
+                <ListBoxItem Style="{StaticResource ProgramItems}">
+                    Cerrar Sesion
+                </ListBoxItem>
+
+            </ListBox>
+
+        </Grid>
+
+
+        <Label
+            Name="TitleWindow"
+            Height="50"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="White"
+            DockPanel.Dock="Top"
+            Foreground="Black" />
+        <Frame
+            Name="PagesContainer"
+            Height="Auto"
+            Background="#313131"
+            DockPanel.Dock="Right"
+            NavigationUIVisibility="Hidden" />
+
+    </DockPanel>
+</Window>

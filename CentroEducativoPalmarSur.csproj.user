@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\Brian Quesada\source\repos\CentroEducativoPalmarSur\Properties\PublishProfiles\ClickOnceProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Pages\AusenciaPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\ColaboradoresPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\GastosPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\PresupuestoPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Registro.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Restablecer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\UsuariosPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ProgramWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\AusenciaPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\ColaboradoresPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\GastosPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PresupuestoPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Registro.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Restablecer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\UsuariosPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ProgramWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

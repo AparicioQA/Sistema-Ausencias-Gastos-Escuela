@@ -1,0 +1,175 @@
+﻿<Page
+    x:Class="CentroEducativoPalmarSur.Pages.UsuariosPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:CentroEducativoPalmarSur.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="UsuariosPage"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Grid>
+        <StackPanel Margin="0,5,0,0">
+            <Grid Width="620">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+
+                </Grid.RowDefinitions>
+
+                <StackPanel
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="1">
+                    <Label Style="{StaticResource LabelPropertyName}">
+                        Nombre Usuario
+                    </Label>
+                    <TextBox Name="TxtNombre" Width="300" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <Label Style="{StaticResource LabelPropertyName}">
+                        Clave
+                    </Label>
+                    <TextBox Name="TxtClave" Width="140" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="2">
+                    <Label Style="{StaticResource LabelPropertyName}">
+                        Pregunta
+                    </Label>
+                    <ComboBox
+                        BorderThickness="1"
+                        FontSize="12"
+                        Foreground="Black">
+
+                        <ComboBoxItem
+                            Background="White"
+                            BorderBrush="Orange"
+                            Content="¿Cuál es el nombre de tu Escuela Primaria?"
+                            FontSize="16" />
+
+                        <ComboBoxItem
+                            Background="White"
+                            BorderBrush="Orange"
+                            Content="¿Cuál es el nombre de su primera mascota?"
+                            FontSize="16" />
+
+                        <ComboBoxItem
+                            Background="White"
+                            BorderBrush="Orange"
+                            Content="¿Cuál es el primer nombre de su primer pareja?"
+                            FontSize="16" />
+
+                        <ComboBoxItem
+                            Background="White"
+                            BorderBrush="Orange"
+                            Content="¿Cuál es la marca de tu primer telefono?"
+                            FontSize="16" />
+
+                        <ComboBoxItem
+                            Background="White"
+                            BorderBrush="Orange"
+                            Content="¿Cuál es el nombre de tu ciudad de nacimiento?"
+                            FontSize="16" />
+                    </ComboBox>
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="3">
+                    <Label Style="{StaticResource LabelPropertyName}">
+                        Respuesta
+                    </Label>
+                    <TextBox Name="TxtRespuesta" Width="140" />
+                </StackPanel>
+
+
+                <Button
+                    x:Name="BtnAgregar"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Width="250"
+                    Height="30"
+                    VerticalAlignment="Center"
+                    Click="BtnAgregar_Click"
+                    Style="{StaticResource OptionsButtons}">
+                    Agregar
+                </Button>
+
+            </Grid>
+
+            <DataGrid
+                Name="DataGridUsuarios"
+                MinHeight="360"
+                Margin="10"
+                AutoGenerateColumns="False"
+                CanUserAddRows="False"
+                ColumnWidth="170"
+                FontSize="14"
+                SelectionMode="Single">
+
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        Binding="{Binding IdUsuario}"
+                        Header="ID"
+                        Visibility="Hidden" />
+                    <DataGridTextColumn Binding="{Binding NombreUsuario}" Header="Nombre" />
+
+                    <DataGridTextColumn Binding="{Binding Respuesta}" Header="Respuesta" />
+
+
+                    <DataGridCheckBoxColumn Binding="{Binding EsAdmin}" Header="Administrador" />
+
+                    <DataGridTemplateColumn x:Name="BtnActualizar" Header="Actualizar">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    Click="BtnActualizar_Click">
+                                    <Image
+                                        Width="20"
+                                        Height="20"
+                                        Source="/Images/updated.png"
+                                        Visibility="Visible" />
+
+                                </Button>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn x:Name="BtnEliminar" Header="Eliminar">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    Click="BtnEliminar_Click">
+                                    <Image
+                                        Width="20"
+                                        Height="20"
+                                        Source="/Images/trash.png"
+                                        Stretch="Uniform" />
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+
+
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

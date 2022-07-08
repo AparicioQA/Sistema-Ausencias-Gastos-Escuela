@@ -1,0 +1,143 @@
+﻿<Page
+    x:Class="CentroEducativoPalmarSur.Pages.Restablecer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:CentroEducativoPalmarSur.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Restablecer"
+    Width="700"
+    Height="350"
+    mc:Ignorable="d">
+
+    <Border>
+        <Grid Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="190" />
+                <ColumnDefinition Width="350" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition Height="50" />
+                <RowDefinition />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Image
+                x:Name="icono"
+                Grid.Row="0"
+                Grid.Column="0"
+                Height="80"
+                Margin="5"
+                Source="/Images/user.png"
+                Visibility="Visible" />
+
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                VerticalAlignment="Center"
+                Content="Nombre de Usuario" />
+            <TextBox
+                Name="TxtNombre"
+                Grid.Row="1"
+                Grid.Column="2"
+                Style="{StaticResource TextBoxLogin}" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                VerticalAlignment="Center"
+                Content="Contraseña" />
+            <PasswordBox
+                Name="TxtClave"
+                Grid.Row="2"
+                Grid.Column="2"
+                Style="{StaticResource PassBoxLogin}" />
+            <Label
+                Grid.Row="3"
+                Grid.Column="1"
+                VerticalAlignment="Center"
+                Content="Repita la Contraseña" />
+            <PasswordBox
+                Name="TxtClaveRepetida"
+                Grid.Row="3"
+                Grid.Column="2"
+                Style="{StaticResource PassBoxLogin}" />
+            <Label
+                Grid.Row="4"
+                Grid.Column="1"
+                Height="60"
+                VerticalAlignment="Center">
+                <Label.Content>
+                    <TextBlock Text="Pregunta de Seguridad" TextWrapping="Wrap" />
+                </Label.Content>
+            </Label>
+            <ComboBox
+                Grid.Row="4"
+                Grid.Column="2"
+                Height="32"
+                BorderThickness="1"
+                FontSize="14"
+                Foreground="Black">
+
+                <ComboBoxItem
+                    Background="White"
+                    BorderBrush="Orange"
+                    Content="¿Cuál es el nombre de tu Escuela Primaria?"
+                    FontSize="16" />
+
+                <ComboBoxItem
+                    Background="White"
+                    BorderBrush="Orange"
+                    Content="¿Cuál es el nombre de su primera mascota?"
+                    FontSize="16" />
+
+                <ComboBoxItem
+                    Background="White"
+                    BorderBrush="Orange"
+                    Content="¿Cuál es el primer nombre de su primer pareja?"
+                    FontSize="16" />
+
+                <ComboBoxItem
+                    Background="White"
+                    BorderBrush="Orange"
+                    Content="¿Cuál es la marca de tu primer telefono?"
+                    FontSize="16" />
+
+                <ComboBoxItem
+                    Background="White"
+                    BorderBrush="Orange"
+                    Content="¿Cuál es el nombre de tu ciudad de nacimiento?"
+                    FontSize="16" />
+            </ComboBox>
+
+            <TextBox
+                Name="TxtRespuesta"
+                Grid.Row="5"
+                Grid.Column="2"
+                Style="{StaticResource TextBoxLogin}" />
+
+            <Button
+                Name="BtnRestablecer"
+                Grid.Row="6"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Margin="0,9"
+                Click="BtnRestablecer_Click"
+                Content="Continuar"
+                Style="{StaticResource LoginColors}" />
+            <Button
+                Grid.Row="7"
+                Grid.Column="1"
+                BorderThickness="0,0,0,0"
+                Click="BtnLogin"
+                Style="{StaticResource LoginOptionButtons}">
+                Login
+            </Button>
+
+        </Grid>
+    </Border>
+</Page>

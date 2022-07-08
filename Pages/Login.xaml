@@ -1,0 +1,91 @@
+﻿<Page
+    x:Class="CentroEducativoPalmarSur.Pages.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:CentroEducativoPalmarSur.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Login"
+    Width="700"
+    Height="350"
+    Background="White"
+    mc:Ignorable="d">
+
+
+    <Border >
+        <Grid Width="500" Height="240">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Image
+                Grid.ColumnSpan="3"
+                Height="60"
+                Margin="0,0,0,10"
+                Source="/Images/user.png"
+                Visibility="Visible" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                Content="Nombre de Usuario" />
+            <TextBox
+                Name="UserNameBox"
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource TextBoxLogin}" />
+
+
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                Content="Contraseña" />
+            <PasswordBox
+                Name="ClaveBox"
+                Grid.Row="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource PassBoxLogin}" />
+            <Button
+                Grid.Row="3"
+                Grid.Column="2"
+                BorderThickness="0,0,0,0"
+                Click="BtnRestablecimiento"
+                Style="{StaticResource LoginOptionButtons}">
+                Olvide la Contraseña
+            </Button>
+            <Button
+                Name="BtnLogin"
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Click="BtnLogin_Click"
+                Content="Iniciar Sesión"
+                Style="{StaticResource LoginColors}" />
+
+            <Button
+                Grid.Row="5"
+                Grid.Column="2"
+                Click="BtnRegistro"
+                Style="{StaticResource LoginOptionButtons}">
+                Registrarse
+            </Button>
+
+        </Grid>
+
+    </Border>
+
+</Page>
